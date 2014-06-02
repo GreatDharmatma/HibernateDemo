@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1 Jun, 2014 6:52:00 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="org.rapideagle.tutorial.hibernatedemo.entities.Employee" table="employee" catalog="scratchtest">
+        <id name="employeeId" type="java.lang.Long">
+            <column name="employee_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="department" class="org.rapideagle.tutorial.hibernatedemo.entities.Department" fetch="select">
+            <column name="department_id" />
+        </many-to-one>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50" />
+        </property>
+        <property name="birthDate" type="date">
+            <column name="birth_date" length="10" />
+        </property>
+        <property name="cellPhone" type="string">
+            <column name="cell_phone" length="15" />
+        </property>
+    </class>
+</hibernate-mapping>
