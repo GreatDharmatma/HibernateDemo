@@ -21,6 +21,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "department", catalog = "scratchtest", uniqueConstraints = @UniqueConstraint(columnNames = "dept_name"))
 public class Department implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3013582493483729201L;
 	private Long departmentId;
 	private String deptName;
 	private Set<Employee> employees = new HashSet<Employee>(0);
